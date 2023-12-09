@@ -10,6 +10,8 @@ for chunk in pd.read_csv(file_path, chunksize=chunk_size):
     # print(list(chunk['amplitude1']))
     
     # csis = []
+    amplitudes_variances = []
+    phases_variances = []
     for i in range(64):
         # amplitudes = []
         # phases = []
@@ -17,10 +19,16 @@ for chunk in pd.read_csv(file_path, chunksize=chunk_size):
         phases = (list(chunk['phase'+str(i+1)]))
         csi = [complex(r, i) for r,i in zip(amplitudes, phases)]
 
-        print("Amplitude Variance Channel " + str(i+1) + " = " + str(wavelet_amplitude_variance(csi, 'db4', 2)))
-        print("Phase Variance Channel " + str(i+1) + " = " + str(wavelet_phase_variance(csi, 'db4', 2)))
+        # print("Amplitude Variance Channel " + str(i+1) + " = " + str(wavelet_amplitude_variance(csi, 'db4', 2)))
+        # print("Phase Variance Channel " + str(i+1) + " = " + str(wavelet_phase_variance(csi, 'db4', 2)))
+
+        amplitudes_variances.append(wavelet_amplitude_variance(csi, 'db4', 2))
+        phases_variances.append(wavelet_phase_variance(csi, 'db4', 2))
 
         # csis.append([complex(r, i) for r,i in zip(amplitudes, phases)])
+    
+    print(len(amplitudes_variances))
+    # print(len(phases_variances))
 
 
 

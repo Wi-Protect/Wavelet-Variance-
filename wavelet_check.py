@@ -48,19 +48,19 @@ def wavelet_phase_variance(csi, wavelet_name, level):
   # Return total wavelet phase variance
   return np.sum(variances)
 
-# Example usage
+# # Example usage
 
-# Define sample CSI signal
-csi = np.array([1.2+0.3j, 1.4+0.2j, 1.5+0.1j])
+# # Define sample CSI signal
+# csi = np.array([1.2+0.3j, 1.4+0.2j, 1.5+0.1j])
 
-# Choose wavelet and level
-wavelet_name = 'db4'
-level = 2
+# # Choose wavelet and level
+# wavelet_name = 'db4'
+# level = 2
 
-# Calculate wavelet amplitude and phase variances
-wav_amp_var = wavelet_amplitude_variance(csi, wavelet_name, level)
-wav_phase_var = wavelet_phase_variance(csi, wavelet_name, level)
+# # Calculate wavelet amplitude and phase variances
+# wav_amp_var = wavelet_amplitude_variance(csi, wavelet_name, level)
+# wav_phase_var = wavelet_phase_variance(csi, wavelet_name, level)
 
-# Print results
-print("Wavelet amplitude variance:", wav_amp_var)
-print("Wavelet phase variance:", wav_phase_var)
+# # Print results
+# print("Wavelet amplitude variance:", wav_amp_var)
+# print("Wavelet phase variance:", wav_phase_var)
